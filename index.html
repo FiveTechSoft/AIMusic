@@ -7,9 +7,11 @@
 <style>
   body { background:#111; color:#eee; font-family:Segoe UI, Arial, sans-serif; margin:0; padding:20px; }
   h1 { text-align:center; font-weight:300; letter-spacing:2px; }
-  .wrap { max-width:900px; margin:0 auto; }
-  video { width:50%; max-width:450px; display:block; margin:0 auto; background:#000; border-radius:6px; }
-  ul { list-style:none; padding:0; margin:20px 0; }
+  .wrap { max-width:1000px; margin:0 auto; }
+  .layout { display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; }
+  .layout > video { flex:0 0 450px; max-width:450px; width:100%; background:#000; border-radius:6px; }
+  .layout > ul { flex:1 1 300px; min-width:260px; }
+  ul { list-style:none; padding:0; margin:0; }
   li { padding:10px 14px; cursor:pointer; border-bottom:1px solid #333; transition:background .15s; }
   li:hover { background:#222; }
   li.active { background:#2a2a2a; color:#ffcc00; border-left:3px solid #ffcc00; padding-left:11px; }
@@ -21,8 +23,10 @@
 
 <div class="wrap">
   <h1>AI Music Playlist</h1>
-  <video id="player" controls autoplay playsinline></video>
-  <ul id="list"></ul>
+  <div class="layout">
+    <video id="player" controls autoplay playsinline></video>
+    <ul id="list"></ul>
+  </div>
   <footer>
     Generated music tracks &middot;
     <a href="https://github.com/FiveTechSoft/AIMusic">github.com/FiveTechSoft/AIMusic</a>
